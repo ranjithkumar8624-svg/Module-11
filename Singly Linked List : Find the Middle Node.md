@@ -36,10 +36,36 @@ To write a Python program that:
 ---
 
 ## 💻 Program
-Add code here
-
+class Node:
+def init(self, data):
+self.data = data
+self.next = None
+class LinkedList:
+def init(self):
+self.head = None
+def append(self, data):
+new_node = Node(data)
+if not self.head:
+self.head = new_node
+return
+temp = self.head
+while temp.next:
+temp = temp.next
+temp.next = new_node
+def get_middle_recursive(self, slow, fast):
+if not fast or not fast.next:
+return slow # Return the middle node
+return self.get_middle_recursive(slow.next, fast.next.next)
+def find_middle(self):
+if not self.head:
+return None
+middle_node = self.get_middle_recursive(self.head, self.head)
+return middle_node.data if middle_node else None
+n = int(input().strip()) # Number of elements
+arr = list(map(int, input().strip().split())) # Linked list elements
 ## Sample Input & Output
+<img width="400" height="177" alt="image" src="https://github.com/user-attachments/assets/c15efb14-ada8-4346-bf2d-218802c9b322" />
 
 ## Result
 
-
+Thus the program was executed successfully
